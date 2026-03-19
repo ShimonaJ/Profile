@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background: #f0f4f8;
             min-height: 100vh;
             padding: 20px;
@@ -34,7 +34,8 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
@@ -82,12 +83,13 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             margin-bottom: 6px;
+            font-family: 'Roboto', sans-serif;
         }
 
         .resume-header .title {
             font-size: 16px;
             opacity: 0.85;
-            font-weight: 400;
+            font-weight: 300;
             margin-bottom: 20px;
             letter-spacing: 0.3px;
         }
@@ -98,6 +100,7 @@
             gap: 16px;
             font-size: 13px;
             opacity: 0.9;
+            font-weight: 400;
         }
 
         .contact-info span {
@@ -115,14 +118,15 @@
         }
 
         .section-title {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.8px;
             color: #4B286D;
             border-bottom: 2px solid #4B286D;
             padding-bottom: 6px;
             margin-bottom: 18px;
+            font-family: 'Roboto', sans-serif;
         }
 
         /* Summary as bullet points */
@@ -139,6 +143,7 @@
             color: #444;
             padding-left: 18px;
             position: relative;
+            font-weight: 400;
         }
 
         .summary-bullets li::before {
@@ -172,7 +177,7 @@
         .job-company {
             font-size: 14px;
             color: #4B286D;
-            font-weight: 600;
+            font-weight: 500;
             margin-bottom: 2px;
         }
 
@@ -197,6 +202,7 @@
             color: #444;
             padding: 3px 0 3px 18px;
             position: relative;
+            font-weight: 400;
         }
 
         .job-bullets li::before {
@@ -212,7 +218,7 @@
             background: #f0e8f8;
             padding: 1px 5px;
             border-radius: 3px;
-            font-weight: 600;
+            font-weight: 700;
             color: #4B286D;
         }
 
@@ -235,12 +241,13 @@
         }
 
         .skill-category h4 {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             color: #4B286D;
             margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
         }
 
         .skill-tags {
@@ -256,6 +263,7 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: 500;
+            font-family: 'Roboto', sans-serif;
         }
 
         .skill-tag.tech {
@@ -290,6 +298,7 @@
             font-size: 13px;
             color: #444;
             line-height: 1.5;
+            font-weight: 400;
         }
 
         .edu-cert-grid {
@@ -312,6 +321,7 @@
             font-size: 12.5px;
             color: #666;
             margin-top: 2px;
+            font-weight: 400;
         }
 
         .callout {
@@ -322,6 +332,7 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
+            font-weight: 400;
         }
 
         .callout.tech {
@@ -330,7 +341,7 @@
             color: #1565c0;
         }
 
-        .callout.tech strong { color: #0d47a1; }
+        .callout.tech strong { color: #0d47a1; font-weight: 700; }
 
         .callout.innovation {
             background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
@@ -338,7 +349,7 @@
             color: #1b5e20;
         }
 
-        .callout.innovation strong { color: #1b5e20; }
+        .callout.innovation strong { color: #1b5e20; font-weight: 700; }
 
         @media print {
             body { background: white; padding: 0; }
@@ -596,7 +607,7 @@
             <div class="section-title">Education & Certifications</div>
             <div class="edu-cert-grid">
                 <div>
-                    <h4 style="font-size:13px;font-weight:700;color:#4B286D;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">Education</h4>
+                    <h4 style="font-size:12px;font-weight:700;color:#4B286D;margin-bottom:12px;text-transform:uppercase;letter-spacing:1.2px;font-family:'Roboto',sans-serif;">Education</h4>
                     <div class="edu-item">
                         <h4>MS, Software Systems</h4>
                         <p>Birla Institute of Technology and Science, Pilani, India | 2011 – 2013</p>
@@ -607,7 +618,7 @@
                     </div>
                 </div>
                 <div>
-                    <h4 style="font-size:13px;font-weight:700;color:#4B286D;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">Certifications</h4>
+                    <h4 style="font-size:12px;font-weight:700;color:#4B286D;margin-bottom:12px;text-transform:uppercase;letter-spacing:1.2px;font-family:'Roboto',sans-serif;">Certifications</h4>
                     <div class="cert-item">
                         <h4>Platform Engineering Foundations</h4>
                         <p>Professional Certification</p>
@@ -685,7 +696,9 @@
             padding: 14px 24px;
             border-radius: 8px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+
             z-index: 9999;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             max-width: 90%;
