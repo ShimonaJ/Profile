@@ -197,6 +197,18 @@
             color: #4B286D;
         }
 
+        .match-badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -227,6 +239,16 @@
             font-weight: 500;
         }
 
+        .skill-tag.tech {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .skill-tag.innovation {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -238,6 +260,11 @@
             border-left: 3px solid #4B286D;
             padding: 14px 16px;
             border-radius: 0 8px 8px 0;
+        }
+
+        .achievement-card.innovation {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 3px solid #2e7d32;
         }
 
         .achievement-card p {
@@ -268,17 +295,31 @@
             margin-top: 2px;
         }
 
-        .match-badge {
-            display: inline-block;
-            background: #e8f5e9;
-            color: #2e7d32;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 20px;
-            margin-left: 8px;
-            vertical-align: middle;
+        .callout {
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-top: 12px;
+            font-size: 13px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
         }
+
+        .callout.tech {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border: 1px solid #90caf9;
+            color: #1565c0;
+        }
+
+        .callout.tech strong { color: #0d47a1; }
+
+        .callout.innovation {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border: 1px solid #a5d6a7;
+            color: #1b5e20;
+        }
+
+        .callout.innovation strong { color: #1b5e20; }
 
         @media print {
             body { background: white; padding: 0; }
@@ -321,7 +362,7 @@
         <div class="section">
             <div class="section-title">Professional Summary</div>
             <p class="summary-text">
-                Results-driven Engineering Lead/Senior Technical Delivery Lead with <strong>15+ years</strong> of progressive leadership in software engineering, digital product delivery, and cross-functional team management. Currently leading a team of <span class="highlight">~15 engineers</span> at TELUS Digital, recognized consistently for creating empowering, high-performance team environments that drive clarity, ownership, and motivation. Proven track record delivering complex digital commerce initiatives—including the Vulcan on Green webapp and Optik TV expansion—within TELUS' strategic Mobility and digital ecosystem programs. Expert in Agile methodologies, stakeholder management, and bridging product strategy with engineering execution at scale.
+                Results-driven Engineering Lead and Senior Technical Delivery Lead with <strong>15+ years</strong> of progressive leadership in software engineering, digital product delivery, and cross-functional team management. Currently leading a team of <span class="highlight">~15 engineers</span> at TELUS Digital, recognized consistently for creating empowering, high-performance team environments that drive clarity, ownership, and motivation. Hands-on expertise in <strong>modern web technologies including ReactJS, Micro Frontend (MFE) architectures, and TELUS' Green Architecture platform</strong>, with 2+ years owning delivery for 2 production MFE applications. Proven innovator who built a custom AI-assisted engineering dashboard integrating JIRA with real-time Burn-Up analytics to drive delivery transparency and predictability. Expert in Agile methodologies, stakeholder management, and bridging product strategy with engineering execution at scale across TELUS' strategic Mobility and digital ecosystem programs.
             </p>
         </div>
 
@@ -340,13 +381,29 @@
                 <ul class="job-bullets">
                     <li>Lead and support a team of <strong>~15 engineers</strong> across cross-functional squads delivering critical digital commerce experiences for TELUS Mobility and TV platforms.</li>
                     <li>Foster a high-performance team culture built on <strong>empowerment, clarity, and flexibility</strong>—consistently recognized across projects for creating environments where engineers feel motivated, trusted, and engaged.</li>
-                    <li>Successfully delivered the <strong>Vulcan on Green webapp</strong> for Internet and WiFi Plus in Eastern regions, coordinating cross-functional teams to achieve deployment milestones on schedule.</li>
+                    <li>Own delivery for <strong>2 Micro Frontend (MFE) applications</strong> built on TELUS' Green Architecture platform (2+ years), overseeing architecture decisions, engineering standards, and long-term technical strategy for these critical customer-facing experiences.</li>
+                    <li>Successfully delivered the <strong>Vulcan on Green webapp</strong> for Internet and WiFi Plus in Eastern regions, coordinating cross-functional teams to achieve deployment milestones on schedule using modern <strong>ReactJS and Green Architecture</strong>.</li>
                     <li>Currently leading front-end delivery for <strong>Optik TV expansion</strong>, managing requirements gathering, dependency tracking, and stakeholder communication across multiple technical teams.</li>
+                    <li><strong>Built a custom engineering intelligence dashboard</strong> using Visual Studio Code with Cline (AI-assisted development), integrating directly with JIRA to deliver real-time Burn-Up charts showing total scope, developer velocity, and projected completion—driving delivery transparency and enabling data-driven decisions for stakeholders.</li>
                     <li>Facilitate sprint planning, backlog refinement, and cross-team coordination, ensuring engineers are focused on the highest-value work with blockers removed proactively.</li>
-                   <!-- <li>Lead triage and <strong>incident management processes</strong>, managing production issues through to resolution while communicating deployment schedules and updates to stakeholders.</li>-->
+                    <li>Lead triage and <strong>incident management processes</strong>, managing production issues through to resolution while communicating deployment schedules and updates to stakeholders.</li>
                     <li>Collaborate with Product Owners, architects, and development teams to identify business requirements, document user stories with clear acceptance criteria, and translate strategy into engineering plans.</li>
-                    <li>Provide <strong>technical leadership</strong> by partnering with senior engineers on architecture decisions, engineering standards, and long-term platform strategy.</li>
+                    <li>Provide <strong>technical leadership</strong> by partnering with senior engineers on architecture decisions, engineering standards, and long-term platform strategy across the MFE ecosystem.</li>
                 </ul>
+
+                <div class="callout tech">
+                    <span style="font-size:18px;">🏗️</span>
+                    <div>
+                        <strong>Modern Web Stack:</strong> ReactJS &nbsp;|&nbsp; Micro Frontend (MFE) Architecture &nbsp;|&nbsp; TELUS Green Architecture &nbsp;|&nbsp; API Integration &nbsp;|&nbsp; Cloud-based Platforms
+                    </div>
+                </div>
+
+                <div class="callout innovation">
+                    <span style="font-size:18px;">🤖</span>
+                    <div>
+                        <strong>Innovation Highlight:</strong> Developed a JIRA-integrated Burn-Up Dashboard using AI-assisted development (VS Code + Cline), providing real-time visibility into dev progress vs. projected scope — enabling proactive risk management and stakeholder confidence.
+                    </div>
+                </div>
             </div>
 
             <div class="job">
@@ -360,7 +417,7 @@
                 <ul class="job-bullets">
                     <li>Define and manage <strong>OKRs, KPIs, and success metrics</strong> to measure product performance and drive measurable business outcomes.</li>
                     <li>Lead multiple engineering squads with effective communication, alignment, and delivery management across parallel workstreams.</li>
-                    <li>Build product vision, strategy, and value assessments, translating business goals into clear engineering roadmaps.</li>
+                    <li>Build product vision, strategy, and value assessments, translating business goals into clear engineering roadmaps for modern digital commerce experiences.</li>
                     <li>Champion team culture and growth mindset, creating environments where team members feel motivated, empowered, and accountable.</li>
                     <li>Host Agile ceremonies with adaptive processes using JIRA and GitHub for efficient delivery tracking.</li>
                 </ul>
@@ -375,7 +432,8 @@
                     <span class="job-date">May 2022 – October 2025</span>
                 </div>
                 <ul class="job-bullets">
-                    <li>Managed product backlog, stakeholder requirements, and delivery roadmap for SaaS-based enterprise applications.</li>
+                    <li>Managed product backlog, stakeholder requirements, and delivery roadmap for SaaS-based enterprise applications and digital platforms.</li>
+                    <li>Partnered with engineering teams on <strong>front-end architecture decisions</strong>, leveraging deep knowledge of ReactJS and modern web development practices.</li>
                     <li>Built trust with internal clients and cross-functional teams through transparent communication and consistent delivery.</li>
                     <li>Supported remote onshore clients with round-the-clock availability, ensuring high-quality product outcomes.</li>
                     <li>Defined and documented user stories, acceptance criteria, and requirements to enable engineering teams to deliver with clarity and speed.</li>
@@ -406,6 +464,7 @@
                 </div>
                 <ul class="job-bullets">
                     <li>Progressed from <strong>full-stack developer</strong> to Technical Lead over 9 years, building deep expertise across SaaS-based ERP platforms, system architecture, and platform engineering.</li>
+                    <li>Developed hands-on expertise in <strong>ReactJS, full-stack web development</strong>, API integrations, and modern front-end architectures.</li>
                     <li>Transitioned to <strong>Product Owner</strong> in June 2019, leveraging technical depth to bridge engineering and business strategy.</li>
                     <li>Mentored junior developers, led technical implementations, and drove engineering excellence across multiple platforms and technologies.</li>
                     <li>Developed expertise in system architecture, API integrations, and platform engineering foundations.</li>
@@ -418,13 +477,19 @@
             <div class="section-title">Key Achievements</div>
             <div class="achievements-grid">
                 <div class="achievement-card">
-                    <p>🚀 <strong>Vulcan on Green Delivery</strong> — Successfully led cross-functional delivery of Internet and WiFi Plus webapp for Eastern regions, meeting all deployment milestones.</p>
+                    <p>🚀 <strong>Vulcan on Green Delivery</strong> — Successfully led delivery of Internet and WiFi Plus webapp on TELUS Green Architecture with ReactJS MFE, meeting all deployment milestones for Eastern regions.</p>
                 </div>
                 <div class="achievement-card">
-                    <p>📺 <strong>Optik TV Expansion</strong> — Currently leading front-end delivery for TELUS' Optik TV expansion with coordinated multi-team execution.</p>
+                    <p>🏗️ <strong>MFE Ownership (2+ Years)</strong> — Owned and led delivery for 2 Micro Frontend applications on Green Architecture for 2+ years, building deep expertise in modern web platform architecture.</p>
+                </div>
+                <div class="achievement-card innovation">
+                    <p>🤖 <strong>AI-Assisted Engineering Dashboard</strong> — Built a custom JIRA-integrated Burn-Up analytics dashboard using VS Code + Cline, providing real-time dev progress vs. projected scope visibility for stakeholders and leadership.</p>
                 </div>
                 <div class="achievement-card">
-                    <p>👥 <strong>Team Leadership Recognition</strong> — Consistently recognized across all projects for building empowering, high-performance team environments where engineers feel motivated and trusted.</p>
+                    <p>👥 <strong>Team Leadership Recognition</strong> — Consistently recognized across all projects for building empowering, high-performance team environments where ~15 engineers feel motivated, trusted, and engaged.</p>
+                </div>
+                <div class="achievement-card">
+                    <p>📺 <strong>Optik TV Expansion</strong> — Currently leading front-end delivery for TELUS' Optik TV expansion with coordinated multi-team execution across modern web platforms.</p>
                 </div>
                 <div class="achievement-card">
                     <p>📈 <strong>15+ Years of Growth</strong> — Progressive career from Technical Lead to Engineering Manager, with deep expertise across the full software delivery lifecycle.</p>
@@ -440,10 +505,21 @@
                     <h4>Engineering Leadership</h4>
                     <div class="skill-tags">
                         <span class="skill-tag">Team Management (~15 Engineers)</span>
-                        <!-- <span class="skill-tag">Coaching & Mentoring</span> -->
+                        <span class="skill-tag">Coaching & Mentoring</span>
                         <span class="skill-tag">Engineering Culture</span>
-                        <!-- <span class="skill-tag">Hiring & Onboarding</span> -->
-                        <!-- <span class="skill-tag">Performance Development</span> -->
+                        <span class="skill-tag">Performance Development</span>
+                        <span class="skill-tag">Empowerment & Ownership</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Modern Web & Architecture</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag tech">ReactJS</span>
+                        <span class="skill-tag tech">Micro Frontends (MFE)</span>
+                        <span class="skill-tag tech">Green Architecture</span>
+                        <span class="skill-tag tech">API Integration</span>
+                        <span class="skill-tag tech">Cloud Platforms</span>
+                        <span class="skill-tag tech">Full-Stack Development</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -457,14 +533,13 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h4>Technical</h4>
+                    <h4>Innovation & Tooling</h4>
                     <div class="skill-tags">
-                        <span class="skill-tag">Full-Stack Development</span>
-                        <span class="skill-tag">System Architecture</span>
-                        <span class="skill-tag">SaaS Platforms</span>
-                        <!-- <span class="skill-tag">Platform Engineering</span> -->
-                        <span class="skill-tag">API Integration</span>
-                        <!-- <span class="skill-tag">Incident Management</span> -->
+                        <span class="skill-tag innovation">AI-Assisted Development</span>
+                        <span class="skill-tag innovation">JIRA API Integration</span>
+                        <span class="skill-tag innovation">VS Code + Cline</span>
+                        <span class="skill-tag innovation">Burn-Up Analytics</span>
+                        <span class="skill-tag innovation">Dashboard Engineering</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -478,22 +553,14 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h4>Stakeholder Management</h4>
+                    <h4>Operational Excellence</h4>
                     <div class="skill-tags">
+                        <span class="skill-tag">Incident Management</span>
+                        <span class="skill-tag">System Architecture</span>
+                        <span class="skill-tag">SaaS Platforms</span>
+                        <span class="skill-tag">Platform Engineering</span>
                         <span class="skill-tag">Executive Communication</span>
                         <span class="skill-tag">Cross-Functional Alignment</span>
-                        <!-- <span class="skill-tag">Vendor Management</span> -->
-                        <span class="skill-tag">Expectation Management</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Tools & Platforms</h4>
-                    <div class="skill-tags">
-                        <span class="skill-tag">JIRA</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">Analytics & Reporting</span>
-                        <!-- <span class="skill-tag">Incident Management Systems</span> -->
-                        <span class="skill-tag">AI / ML</span>
                     </div>
                 </div>
             </div>
