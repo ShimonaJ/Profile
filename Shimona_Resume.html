@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shimona Jain - Updated Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .controls {
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #4B286D;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3a1f54;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #4B286D;
+            border: 2px solid #4B286D;
+        }
+
+        .btn-secondary:hover {
+            background: #f8f4fc;
+            transform: translateY(-1px);
+        }
+
+        .resume {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .resume-header {
+            background: linear-gradient(135deg, #4B286D 0%, #2B1B3D 100%);
+            color: white;
+            padding: 40px 48px;
+        }
+
+        .resume-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .resume-header .title {
+            font-size: 16px;
+            opacity: 0.85;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .resume-body {
+            padding: 40px 48px;
+        }
+
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #4B286D;
+            border-bottom: 2px solid #4B286D;
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+        }
+
+        .summary-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .job {
+            margin-bottom: 24px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .job-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .job-company {
+            font-size: 14px;
+            color: #4B286D;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .job-date {
+            font-size: 13px;
+            color: #777;
+            white-space: nowrap;
+            background: #f0e8f8;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .job-bullets {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .job-bullets li {
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: #444;
+            padding: 3px 0 3px 18px;
+            position: relative;
+        }
+
+        .job-bullets li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #4B286D;
+            font-size: 12px;
+            top: 4px;
+        }
+
+        .highlight {
+            background: #f0e8f8;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-weight: 600;
+            color: #4B286D;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-category h4 {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4B286D;
+            margin-bottom: 10px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background: #f0e8f8;
+            color: #4B286D;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #f8f4fc, #f0e8f8);
+            border-left: 3px solid #4B286D;
+            padding: 14px 16px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .achievement-card p {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        .edu-cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .edu-item, .cert-item {
+            margin-bottom: 12px;
+        }
+
+        .edu-item h4, .cert-item h4 {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .edu-item p, .cert-item p {
+            font-size: 12.5px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .match-badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .controls { display: none; }
+            .resume { box-shadow: none; border-radius: 0; }
+        }
+
+        @media (max-width: 600px) {
+            .resume-header, .resume-body { padding: 24px; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .achievements-grid { grid-template-columns: 1fr; }
+            .edu-cert-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <button class="btn btn-secondary" onclick="copyToClipboard()">📋 Copy Text</button>
+    <button class="btn btn-primary" onclick="downloadResume()">⬇️ Download HTML</button>
+    <button class="btn btn-secondary" onclick="window.print()">🖨️ Print / Save PDF</button>
+</div>
+
+<div class="resume" id="resumeContent">
+
+    <!-- HEADER -->
+    <div class="resume-header">
+        <h1>Shimona Jain</h1>
+        <div class="title">Engineering Manager | Senior Technical Delivery Lead | Product Manager</div>
+        <div class="contact-info">
+            <span>📧 shimona.khandelwal@gmail.com</span>
+            <span>📍 Saskatoon, Saskatchewan, Canada</span>
+            <span>🔗 linkedin.com/in/shimona-jain-2302822b</span>
+        </div>
+    </div>
+
+    <div class="resume-body">
+
+        <!-- PROFESSIONAL SUMMARY -->
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <p class="summary-text">
+                Results-driven Engineering Manager and Senior Technical Delivery Lead with <strong>15+ years</strong> of progressive leadership in software engineering, digital product delivery, and cross-functional team management. Currently leading a team of <span class="highlight">~15 engineers</span> at TELUS Digital, recognized consistently for creating empowering, high-performance team environments that drive clarity, ownership, and motivation. Proven track record delivering complex digital commerce initiatives—including the Vulcan on Green webapp and Optik TV expansion—within TELUS' strategic Mobility and digital ecosystem programs. Expert in Agile methodologies, stakeholder management, and bridging product strategy with engineering execution at scale.
+            </p>
+        </div>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <div class="section">
+            <div class="section-title">Professional Experience</div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-company">TELUS Digital</div>
+                        <div class="job-title">Senior Technical Delivery Lead <span class="match-badge">Engineering Manager</span></div>
+                    </div>
+                    <span class="job-date">April 2025 – Present</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Lead and manage a team of <strong>~15 engineers</strong> across cross-functional squads delivering critical digital commerce experiences for TELUS Mobility and TV platforms.</li>
+                    <li>Foster a high-performance team culture built on <strong>empowerment, clarity, and flexibility</strong>—consistently recognized across projects for creating environments where engineers feel motivated, trusted, and engaged.</li>
+                    <li>Successfully delivered the <strong>Vulcan on Green webapp</strong> for Internet and WiFi Plus in Eastern regions, coordinating cross-functional teams to achieve deployment milestones on schedule.</li>
+                    <li>Currently leading front-end delivery for <strong>Optik TV expansion</strong>, managing requirements gathering, dependency tracking, and stakeholder communication across multiple technical teams.</li>
+                    <li>Facilitate sprint planning, backlog refinement, and cross-team coordination, ensuring engineers are focused on the highest-value work with blockers removed proactively.</li>
+                    <li>Lead triage and <strong>incident management processes</strong>, managing production issues through to resolution while communicating deployment schedules and updates to stakeholders.</li>
+                    <li>Collaborate with Product Owners, architects, and development teams to define business requirements, document user stories with clear acceptance criteria, and translate strategy into engineering plans.</li>
+                    <li>Provide <strong>technical leadership</strong> by partnering with senior engineers on architecture decisions, engineering standards, and long-term platform strategy.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-company">TELUS Digital</div>
+                        <div class="job-title">Product Manager</div>
+                    </div>
+                    <span class="job-date">September 2024 – Present</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Define and manage <strong>OKRs, KPIs, and success metrics</strong> to measure product performance and drive measurable business outcomes.</li>
+                    <li>Lead multiple engineering squads with effective communication, alignment, and delivery management across parallel workstreams.</li>
+                    <li>Build product vision, strategy, and value assessments, translating business goals into clear engineering roadmaps.</li>
+                    <li>Champion team culture and growth mindset, creating environments where team members feel motivated, empowered, and accountable.</li>
+                    <li>Host Agile ceremonies with adaptive processes using JIRA and GitHub for efficient delivery tracking.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-company">TELUS Digital</div>
+                        <div class="job-title">Senior Technical Product Owner</div>
+                    </div>
+                    <span class="job-date">May 2022 – October 2025</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Managed product backlog, stakeholder requirements, and delivery roadmap for SaaS-based enterprise applications.</li>
+                    <li>Built trust with internal clients and cross-functional teams through transparent communication and consistent delivery.</li>
+                    <li>Supported remote onshore clients with round-the-clock availability, ensuring high-quality product outcomes.</li>
+                    <li>Defined and documented user stories, acceptance criteria, and requirements to enable engineering teams to deliver with clarity and speed.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-company">TELUS Digital</div>
+                        <div class="job-title">Applications Development Project Lead</div>
+                    </div>
+                    <span class="job-date">December 2021 – May 2022</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Led application development projects with cross-functional engineering teams, managing timelines, deliverables, and technical dependencies.</li>
+                    <li>Coordinated between technical and business stakeholders to ensure alignment and delivery success.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-company">TELUS Digital</div>
+                        <div class="job-title">Technical Lead → Product Owner</div>
+                    </div>
+                    <span class="job-date">June 2010 – December 2021</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Progressed from <strong>full-stack developer</strong> to Technical Lead over 9 years, building deep expertise across SaaS-based ERP platforms, system architecture, and platform engineering.</li>
+                    <li>Transitioned to <strong>Product Owner</strong> in June 2019, leveraging technical depth to bridge engineering and business strategy.</li>
+                    <li>Mentored junior developers, led technical implementations, and drove engineering excellence across multiple platforms and technologies.</li>
+                    <li>Developed expertise in system architecture, API integrations, and platform engineering foundations.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- KEY ACHIEVEMENTS -->
+        <div class="section">
+            <div class="section-title">Key Achievements</div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <p>🚀 <strong>Vulcan on Green Delivery</strong> — Successfully led cross-functional delivery of Internet and WiFi Plus webapp for Eastern regions, meeting all deployment milestones.</p>
+                </div>
+                <div class="achievement-card">
+                    <p>📺 <strong>Optik TV Expansion</strong> — Currently leading front-end delivery for TELUS' Optik TV expansion with coordinated multi-team execution.</p>
+                </div>
+                <div class="achievement-card">
+                    <p>👥 <strong>Team Leadership Recognition</strong> — Consistently recognized across all projects for building empowering, high-performance team environments where engineers feel motivated and trusted.</p>
+                </div>
+                <div class="achievement-card">
+                    <p>📈 <strong>15+ Years of Growth</strong> — Progressive career from Technical Lead to Engineering Manager, with deep expertise across the full software delivery lifecycle.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CORE SKILLS -->
+        <div class="section">
+            <div class="section-title">Core Skills</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Engineering Leadership</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Team Management (~15 Engineers)</span>
+                        <span class="skill-tag">Coaching & Mentoring</span>
+                        <span class="skill-tag">Engineering Culture</span>
+                        <span class="skill-tag">Hiring & Onboarding</span>
+                        <span class="skill-tag">Performance Development</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Delivery & Agile</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Agile / Scrum</span>
+                        <span class="skill-tag">Sprint Planning</span>
+                        <span class="skill-tag">Backlog Management</span>
+                        <span class="skill-tag">Dependency Management</span>
+                        <span class="skill-tag">Risk Mitigation</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Technical</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Full-Stack Development</span>
+                        <span class="skill-tag">System Architecture</span>
+                        <span class="skill-tag">SaaS Platforms</span>
+                        <span class="skill-tag">Platform Engineering</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">Incident Management</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Product & Strategy</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">OKRs & KPIs</span>
+                        <span class="skill-tag">Product Vision</span>
+                        <span class="skill-tag">Roadmap Planning</span>
+                        <span class="skill-tag">Requirements Gathering</span>
+                        <span class="skill-tag">User Story Documentation</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Stakeholder Management</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Executive Communication</span>
+                        <span class="skill-tag">Cross-Functional Alignment</span>
+                        <span class="skill-tag">Vendor Management</span>
+                        <span class="skill-tag">Expectation Management</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Platforms</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JIRA</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Analytics & Reporting</span>
+                        <span class="skill-tag">Incident Management Systems</span>
+                        <span class="skill-tag">AI / ML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EDUCATION & CERTIFICATIONS -->
+        <div class="section">
+            <div class="section-title">Education & Certifications</div>
+            <div class="edu-cert-grid">
+                <div>
+                    <h4 style="font-size:13px;font-weight:700;color:#4B286D;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">Education</h4>
+                    <div class="edu-item">
+                        <h4>MS, Software Systems</h4>
+                        <p>Birla Institute of Technology and Science, Pilani | 2011 – 2013</p>
+                    </div>
+                    <div class="edu-item">
+                        <h4>B.Tech, Electronics & Communication Engineering</h4>
+                        <p>University of Lucknow | 2002 – 2006</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="font-size:13px;font-weight:700;color:#4B286D;margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">Certifications</h4>
+                    <div class="cert-item">
+                        <h4>Platform Engineering Foundations</h4>
+                        <p>Professional Certification</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Managing Platform Products</h4>
+                        <p>Professional Certification</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Deep Learning Nanodegree</h4>
+                        <p>Udacity | 2017</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Android Developer Nanodegree</h4>
+                        <p>Udacity | 2015 – 2016</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Engineer In Training</h4>
+                        <p>Professional Certification</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function downloadResume() {
+        const htmlContent = document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        window.fs.downloadFile(blob, 'Shimona_Jain_Resume_Updated.html');
+    }
+
+    function copyToClipboard() {
+        const resume = document.getElementById('resumeContent');
+        const text = resume.innerText;
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('✅ Resume text copied to clipboard! Paste into Google Docs.');
+            }).catch(() => {
+                fallbackCopy(text);
+            });
+        } else {
+            fallbackCopy(text);
+        }
+    }
+
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            showToast('✅ Resume text copied to clipboard! Paste into Google Docs.');
+        } catch (e) {
+            showToast('❌ Could not copy. Please use Print > Save as PDF instead.');
+        }
+        document.body.removeChild(textarea);
+    }
+
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4B286D;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            max-width: 90%;
+            text-align: center;
+        `;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 4000);
+    }
+</script>
+
+</body>
+</html>
