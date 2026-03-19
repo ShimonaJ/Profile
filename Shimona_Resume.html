@@ -125,10 +125,29 @@
             margin-bottom: 18px;
         }
 
-        .summary-text {
-            font-size: 14px;
-            line-height: 1.7;
+        /* Summary as bullet points */
+        .summary-bullets {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 24px;
+        }
+
+        .summary-bullets li {
+            font-size: 13.5px;
+            line-height: 1.6;
             color: #444;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .summary-bullets li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #4B286D;
+            font-size: 12px;
+            top: 3px;
         }
 
         .job {
@@ -332,6 +351,7 @@
             .skills-grid { grid-template-columns: 1fr 1fr; }
             .achievements-grid { grid-template-columns: 1fr; }
             .edu-cert-grid { grid-template-columns: 1fr; }
+            .summary-bullets { grid-template-columns: 1fr; }
         }
     </style>
 </head>
