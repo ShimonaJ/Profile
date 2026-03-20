@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shimona Jain - Cover Letter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f0f4f8;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .controls {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary { background: #4B286D; color: white; }
+        .btn-primary:hover { background: #3a1f54; transform: translateY(-1px); }
+        .btn-secondary { background: white; color: #4B286D; border: 2px solid #4B286D; }
+        .btn-secondary:hover { background: #f8f4fc; transform: translateY(-1px); }
+
+        .letter-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .letter-header {
+            background: linear-gradient(135deg, #4B286D 0%, #2B1B3D 100%);
+            color: white;
+            padding: 36px 48px;
+        }
+
+        .letter-header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .letter-header .subtitle {
+            font-size: 14px;
+            font-weight: 300;
+            opacity: 0.85;
+            margin-bottom: 16px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 12.5px;
+            opacity: 0.9;
+        }
+
+        .contact-row span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .letter-body {
+            padding: 44px 48px;
+        }
+
+        .date-line {
+            font-size: 13.5px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .recipient {
+            margin-bottom: 28px;
+        }
+
+        .recipient p {
+            font-size: 13.5px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .recipient .company {
+            font-weight: 700;
+            color: #4B286D;
+        }
+
+        .subject-line {
+            background: #f0e8f8;
+            border-left: 4px solid #4B286D;
+            padding: 10px 16px;
+            margin-bottom: 28px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .subject-line p {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #4B286D;
+        }
+
+        .salutation {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+
+        .paragraph {
+            font-size: 13.5px;
+            line-height: 1.75;
+            color: #444;
+            margin-bottom: 18px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f4fc, #f0e8f8);
+            border-left: 3px solid #4B286D;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+            margin-top: 6px;
+        }
+
+        .highlight-box ul li {
+            font-size: 13px;
+            color: #444;
+            padding: 3px 0 3px 16px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .highlight-box ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #4B286D;
+            font-size: 11px;
+            top: 5px;
+        }
+
+        .highlight-box .box-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4B286D;
+            margin-bottom: 4px;
+        }
+
+        .innovation-box {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 3px solid #2e7d32;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            font-size: 13px;
+            color: #1b5e20;
+            line-height: 1.6;
+        }
+
+        .innovation-box strong { color: #1b5e20; font-weight: 700; }
+
+        .closing {
+            margin-top: 28px;
+        }
+
+        .closing p {
+            font-size: 13.5px;
+            color: #444;
+            line-height: 1.75;
+            margin-bottom: 18px;
+        }
+
+        .sign-off {
+            margin-top: 28px;
+        }
+
+        .sign-off p {
+            font-size: 13.5px;
+            color: #444;
+            margin-bottom: 4px;
+        }
+
+        .sign-off .name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #4B286D;
+            margin-top: 8px;
+        }
+
+        .sign-off .title-line {
+            font-size: 13px;
+            color: #777;
+            font-weight: 400;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 28px 0;
+        }
+
+        strong.inline { color: #4B286D; font-weight: 700; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .controls { display: none; }
+            .letter-wrapper { box-shadow: none; border-radius: 0; }
+        }
+
+        @media (max-width: 600px) {
+            .letter-header, .letter-body { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <button class="btn btn-secondary" onclick="copyToClipboard()">📋 Copy Text</button>
+    <button class="btn btn-primary" onclick="downloadLetter()">⬇️ Download HTML</button>
+    <button class="btn btn-secondary" onclick="window.print()">🖨️ Print / Save PDF</button>
+</div>
+
+<div class="letter-wrapper" id="letterContent">
+
+    <!-- HEADER -->
+    <div class="letter-header">
+        <h1>Shimona Jain</h1>
+        <div class="subtitle">Engineering Lead | Senior Technical Delivery Lead | Product Manager</div>
+        <div class="contact-row">
+            <span>📧 shimona.khandelwal@gmail.com</span>
+            <span>📞 306-715-5236</span>
+            <span>📍 Saskatoon, Saskatchewan, Canada</span>
+            <span>🔗 linkedin.com/in/shimona-jain-2302822b</span>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="letter-body">
+
+        <div class="date-line">March 20, 2026</div>
+
+        <div class="recipient">
+            <p><span class="company">TELUS Digital Experiences</span></p>
+            <p>Hiring Manager — Manager, Information Services (Req. 53546)</p>
+            <p>Burnaby, BC, Canada</p>
+        </div>
+
+        <div class="subject-line">
+            <p>Re: Application for Manager, Information Services — Requisition #53546</p>
+        </div>
+
+        <p class="salutation">Dear Hiring Manager,</p>
+
+        <p class="paragraph">
+            I am writing to express my strong interest in the <strong class="inline">Manager, Information Services</strong> position at TELUS Digital. As a Senior Technical Delivery Lead and Engineering Lead currently at TELUS Digital, I bring <strong class="inline">15+ years of progressive engineering leadership</strong>, deep hands-on expertise in modern web technologies, and a proven track record of building high-performing, empowered teams that deliver exceptional digital commerce experiences — including several of the very programs this role will lead.
+        </p>
+
+        <p class="paragraph">
+            What excites me most about this opportunity is that it sits at the heart of TELUS' Mobility Convergence program — a strategic initiative I am already closely connected to through my current work on the Optik TV expansion and Vulcan on Green delivery. I understand the technical landscape, the stakeholder ecosystem, and the engineering challenges involved. I am ready to step into this role and drive it forward from day one.
+        </p>
+
+        <div class="highlight-box">
+            <div class="box-title">Why I'm the Right Fit — Key Strengths</div>
+            <ul>
+                <li><strong>Engineering Team Leadership:</strong> Currently leading ~15 engineers across cross-functional squads at TELUS Digital — consistently recognized for creating empowering, high-performance team environments where engineers feel motivated, trusted, and engaged.</li>
+                <li><strong>Micro Frontend (MFE) Expertise:</strong> 2+ years owning delivery for 2 production MFE applications built on TELUS' Green Architecture platform, with hands-on expertise in ReactJS and modern front-end architectures — directly aligned with this role's core technical focus.</li>
+                <li><strong>Digital Commerce Delivery:</strong> Successfully led the Vulcan on Green webapp delivery for Internet and WiFi Plus in Eastern regions, and currently leading front-end delivery for the Optik TV expansion — both within TELUS' strategic Mobility and digital ecosystem.</li>
+                <li><strong>Technical Architecture Leadership:</strong> Partner with senior engineers on architecture decisions, engineering standards, and long-term platform strategy across the MFE ecosystem, balancing speed, reliability, and customer impact.</li>
+                <li><strong>Agile & Operational Excellence:</strong> Deep expertise in Agile/Scrum, sprint planning, backlog management, incident management, and cross-functional stakeholder communication at scale.</li>
+            </ul>
+        </div>
+
+        <p class="paragraph">
+            One example that reflects my approach to engineering leadership is a custom tool I built to improve delivery visibility for my team. Recognizing that stakeholders needed real-time insight into scope and progress, I developed a <strong class="inline">JIRA-integrated Burn-Up analytics dashboard</strong> using Visual Studio Code with Cline (AI-assisted development). This dashboard provides live visibility into total scope, developer velocity, and projected completion — enabling proactive risk management and building stakeholder confidence. This is the kind of hands-on, innovative leadership I bring to every team I lead.
+        </p>
+
+        <div class="innovation-box">
+            🤖 <strong>Innovation in Action:</strong> Built a custom AI-assisted JIRA-integrated Burn-Up Dashboard (VS Code + Cline) — providing real-time dev progress vs. projected scope visibility, enabling data-driven delivery decisions and proactive risk management.
+        </div>
+
+        <p class="paragraph">
+            My leadership philosophy centers on <strong class="inline">empowerment, clarity, and flexibility</strong>. I believe engineers do their best work when they have clear direction, ownership of their work, and a leader who removes blockers rather than creating them. Across every project I've led at TELUS Digital, I've been recognized for building team cultures where people feel motivated, trusted, and proud of what they deliver. I am committed to bringing this same energy to the Manager, Information Services role.
+        </p>
+
+        <p class="paragraph">
+            Beyond technical delivery, I bring strong product partnership skills — having served concurrently as a Product Manager and Senior Technical Product Owner — which gives me a unique ability to bridge engineering execution with business strategy. I understand how to translate product vision into engineering plans, manage complex dependencies across programs, and communicate effectively with executive stakeholders.
+        </p>
+
+        <hr class="divider">
+
+        <div class="closing">
+            <p>
+                I am deeply passionate about TELUS' mission to connect Canadians and deliver world-class digital experiences. Having spent my career at TELUS Digital, I bring not only the technical and leadership skills this role demands, but also the institutional knowledge, relationships, and cultural alignment to make an immediate and lasting impact.
+            </p>
+            <p>
+                I would welcome the opportunity to discuss how my experience and vision align with TELUS' goals for this role. Thank you sincerely for your time and consideration.
+            </p>
+        </div>
+
+        <div class="sign-off">
+            <p>Warm regards,</p>
+            <p class="name">Shimona Jain</p>
+            <p class="title-line">Engineering Lead | Senior Technical Delivery Lead | Product Manager</p>
+            <p class="title-line" style="margin-top:4px;">📞 306-715-5236 &nbsp;|&nbsp; 📧 shimona.khandelwal@gmail.com</p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function downloadLetter() {
+        const htmlContent = document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        window.fs.downloadFile(blob, 'Shimona_Jain_Cover_Letter.html');
+    }
+
+    function copyToClipboard() {
+        const letter = document.getElementById('letterContent');
+        const text = letter.innerText;
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('✅ Cover letter copied to clipboard! Paste into Google Docs.');
+            }).catch(() => {
+                fallbackCopy(text);
+            });
+        } else {
+            fallbackCopy(text);
+        }
+    }
+
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            showToast('✅ Cover letter copied to clipboard! Paste into Google Docs.');
+        } catch (e) {
+            showToast('❌ Could not copy. Please use Print > Save as PDF instead.');
+        }
+        document.body.removeChild(textarea);
+    }
+
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.style.cssText = `
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4B286D;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            max-width: 90%;
+            text-align: center;
+        `;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 4000);
+    }
+</script>
+
+</body>
+</html>
