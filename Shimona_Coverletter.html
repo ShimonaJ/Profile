@@ -56,7 +56,7 @@
         .letter-header {
             background: linear-gradient(135deg, #4B286D 0%, #2B1B3D 100%);
             color: white;
-            padding: 36px 48px;
+            padding: 32px 48px;
         }
 
         .letter-header h1 {
@@ -69,7 +69,7 @@
             font-size: 14px;
             font-weight: 300;
             opacity: 0.85;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .contact-row {
@@ -87,17 +87,17 @@
         }
 
         .letter-body {
-            padding: 44px 48px;
+            padding: 40px 48px;
         }
 
         .date-line {
-            font-size: 13.5px;
+            font-size: 13px;
             color: #666;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .recipient {
-            margin-bottom: 28px;
+            margin-bottom: 22px;
         }
 
         .recipient p {
@@ -115,7 +115,7 @@
             background: #f0e8f8;
             border-left: 4px solid #4B286D;
             padding: 10px 16px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             border-radius: 0 6px 6px 0;
         }
 
@@ -128,7 +128,7 @@
         .salutation {
             font-size: 14px;
             color: #333;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             font-weight: 500;
         }
 
@@ -136,7 +136,7 @@
             font-size: 13.5px;
             line-height: 1.75;
             color: #444;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .highlight-box {
@@ -144,12 +144,11 @@
             border-left: 3px solid #4B286D;
             padding: 14px 18px;
             border-radius: 0 8px 8px 0;
-            margin: 20px 0;
+            margin: 18px 0;
         }
 
         .highlight-box ul {
             list-style: none;
-            margin-top: 6px;
         }
 
         .highlight-box ul li {
@@ -169,21 +168,12 @@
             top: 5px;
         }
 
-        .highlight-box .box-title {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #4B286D;
-            margin-bottom: 4px;
-        }
-
         .innovation-box {
             background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
             border-left: 3px solid #2e7d32;
-            padding: 14px 18px;
+            padding: 12px 16px;
             border-radius: 0 8px 8px 0;
-            margin: 20px 0;
+            margin: 18px 0;
             font-size: 13px;
             color: #1b5e20;
             line-height: 1.6;
@@ -191,19 +181,8 @@
 
         .innovation-box strong { color: #1b5e20; font-weight: 700; }
 
-        .closing {
-            margin-top: 28px;
-        }
-
-        .closing p {
-            font-size: 13.5px;
-            color: #444;
-            line-height: 1.75;
-            margin-bottom: 18px;
-        }
-
         .sign-off {
-            margin-top: 28px;
+            margin-top: 24px;
         }
 
         .sign-off p {
@@ -225,18 +204,21 @@
             font-weight: 400;
         }
 
-        .divider {
-            border: none;
-            border-top: 1px solid #eee;
-            margin: 28px 0;
-        }
-
         strong.inline { color: #4B286D; font-weight: 700; }
+
+        .word-count {
+            text-align: right;
+            font-size: 11px;
+            color: #aaa;
+            margin-top: 12px;
+            font-style: italic;
+        }
 
         @media print {
             body { background: white; padding: 0; }
             .controls { display: none; }
             .letter-wrapper { box-shadow: none; border-radius: 0; }
+            .word-count { display: none; }
         }
 
         @media (max-width: 600px) {
@@ -284,50 +266,35 @@
         <p class="salutation">Dear Hiring Manager,</p>
 
         <p class="paragraph">
-            I am writing to express my strong interest in the <strong class="inline">Manager, Information Services</strong> position at TELUS Digital. As a Senior Technical Delivery Lead and Engineering Lead currently at TELUS Digital, I bring <strong class="inline">15+ years of progressive engineering leadership</strong>, deep hands-on expertise in modern web technologies, and a proven track record of building high-performing, empowered teams that deliver exceptional digital commerce experiences — including several of the very programs this role will lead.
-        </p>
-
-        <p class="paragraph">
-            What excites me most about this opportunity is that it sits at the heart of TELUS' Mobility Convergence program — a strategic initiative I am already closely connected to through my current work on the Optik TV expansion and Vulcan on Green delivery. I understand the technical landscape, the stakeholder ecosystem, and the engineering challenges involved. I am ready to step into this role and drive it forward from day one.
+            I am excited to apply for the <strong class="inline">Manager, Information Services</strong> role at TELUS Digital. As a current Senior Technical Delivery Lead and Engineering Lead at TELUS Digital with <strong class="inline">15+ years of progressive engineering leadership</strong>, I bring hands-on expertise in the exact technologies and programs this role demands — including direct delivery experience on the Mobility Convergence ecosystem through Vulcan on Green and Optik TV.
         </p>
 
         <div class="highlight-box">
-            <div class="box-title">Why I'm the Right Fit — Key Strengths</div>
             <ul>
-                <li><strong>Engineering Team Leadership:</strong> Currently leading ~15 engineers across cross-functional squads at TELUS Digital — consistently recognized for creating empowering, high-performance team environments where engineers feel motivated, trusted, and engaged.</li>
-                <li><strong>Micro Frontend (MFE) Expertise:</strong> 2+ years owning delivery for 2 production MFE applications built on TELUS' Green Architecture platform, with hands-on expertise in ReactJS and modern front-end architectures — directly aligned with this role's core technical focus.</li>
-                <li><strong>Digital Commerce Delivery:</strong> Successfully led the Vulcan on Green webapp delivery for Internet and WiFi Plus in Eastern regions, and currently leading front-end delivery for the Optik TV expansion — both within TELUS' strategic Mobility and digital ecosystem.</li>
-                <li><strong>Technical Architecture Leadership:</strong> Partner with senior engineers on architecture decisions, engineering standards, and long-term platform strategy across the MFE ecosystem, balancing speed, reliability, and customer impact.</li>
-                <li><strong>Agile & Operational Excellence:</strong> Deep expertise in Agile/Scrum, sprint planning, backlog management, incident management, and cross-functional stakeholder communication at scale.</li>
+                <li><strong>Engineering Team Leadership:</strong> Currently leading ~15 engineers — consistently recognized for building empowering, high-performance team cultures where engineers feel motivated, trusted, and engaged.</li>
+                <li><strong>Micro Frontend Expertise:</strong> 2+ years owning delivery for 2 production MFE applications on TELUS' Green Architecture platform, with hands-on ReactJS expertise — directly aligned with this role's core technical focus.</li>
+                <li><strong>Proven Digital Commerce Delivery:</strong> Led Vulcan on Green webapp delivery for Internet and WiFi Plus in Eastern regions; currently leading Optik TV front-end expansion across multiple technical teams.</li>
+                <li><strong>Technical & Product Leadership:</strong> Partner with senior engineers on architecture decisions and platform strategy, while bridging engineering execution with business goals through concurrent Product Manager experience.</li>
             </ul>
         </div>
 
         <p class="paragraph">
-            One example that reflects my approach to engineering leadership is a custom tool I built to improve delivery visibility for my team. Recognizing that stakeholders needed real-time insight into scope and progress, I developed a <strong class="inline">JIRA-integrated Burn-Up analytics dashboard</strong> using Visual Studio Code with Cline (AI-assisted development). This dashboard provides live visibility into total scope, developer velocity, and projected completion — enabling proactive risk management and building stakeholder confidence. This is the kind of hands-on, innovative leadership I bring to every team I lead.
+            A recent example of my hands-on leadership: I built a custom <strong class="inline">JIRA-integrated Burn-Up analytics dashboard</strong> using AI-assisted development (VS Code + Cline) to give stakeholders real-time visibility into scope, velocity, and projected completion. This is the kind of proactive, innovative thinking I bring to every team I lead.
         </p>
 
         <div class="innovation-box">
-            🤖 <strong>Innovation in Action:</strong> Built a custom AI-assisted JIRA-integrated Burn-Up Dashboard (VS Code + Cline) — providing real-time dev progress vs. projected scope visibility, enabling data-driven delivery decisions and proactive risk management.
+            🤖 <strong>Innovation Highlight:</strong> Custom AI-assisted JIRA Burn-Up Dashboard — real-time dev progress vs. projected scope, enabling proactive risk management and stakeholder confidence.
         </div>
 
         <p class="paragraph">
-            My leadership philosophy centers on <strong class="inline">empowerment, clarity, and flexibility</strong>. I believe engineers do their best work when they have clear direction, ownership of their work, and a leader who removes blockers rather than creating them. Across every project I've led at TELUS Digital, I've been recognized for building team cultures where people feel motivated, trusted, and proud of what they deliver. I am committed to bringing this same energy to the Manager, Information Services role.
+            My leadership philosophy is simple: <strong class="inline">empower engineers, provide clarity, and remove blockers</strong>. I believe the best teams are built on trust, ownership, and a culture of continuous improvement — and I've been recognized consistently across projects for delivering exactly that.
         </p>
 
         <p class="paragraph">
-            Beyond technical delivery, I bring strong product partnership skills — having served concurrently as a Product Manager and Senior Technical Product Owner — which gives me a unique ability to bridge engineering execution with business strategy. I understand how to translate product vision into engineering plans, manage complex dependencies across programs, and communicate effectively with executive stakeholders.
+            I am deeply passionate about TELUS' mission and bring not only the technical and leadership skills this role demands, but the institutional knowledge and cultural alignment to make an immediate impact. I would welcome the opportunity to discuss how my experience aligns with your goals.
         </p>
 
-        <hr class="divider">
-
-        <div class="closing">
-            <p>
-                I am deeply passionate about TELUS' mission to connect Canadians and deliver world-class digital experiences. Having spent my career at TELUS Digital, I bring not only the technical and leadership skills this role demands, but also the institutional knowledge, relationships, and cultural alignment to make an immediate and lasting impact.
-            </p>
-            <p>
-                I would welcome the opportunity to discuss how my experience and vision align with TELUS' goals for this role. Thank you sincerely for your time and consideration.
-            </p>
-        </div>
+        <p class="paragraph">Thank you sincerely for your time and consideration.</p>
 
         <div class="sign-off">
             <p>Warm regards,</p>
@@ -336,10 +303,20 @@
             <p class="title-line" style="margin-top:4px;">📞 306-715-5236 &nbsp;|&nbsp; 📧 shimona.khandelwal@gmail.com</p>
         </div>
 
+        <div class="word-count" id="wordCount"></div>
+
     </div>
 </div>
 
 <script>
+    // Word count
+    window.addEventListener('load', () => {
+        const body = document.getElementById('letterContent');
+        const text = body.innerText;
+        const words = text.trim().split(/\s+/).length;
+        document.getElementById('wordCount').textContent = `~${words} words`;
+    });
+
     function downloadLetter() {
         const htmlContent = document.documentElement.outerHTML;
         const blob = new Blob([htmlContent], { type: 'text/html' });
