@@ -1,0 +1,924 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shimona Jain - Introduction Slides</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #1a1a2e;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 8px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary { background: #4B286D; color: white; }
+        .btn-primary:hover { background: #3a1f54; }
+        .btn-secondary { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+        .btn-danger { background: #c62828; color: white; }
+        .btn-danger:hover { background: #b71c1c; }
+
+        /* Slide container */
+        .slide-wrapper {
+            width: 100%;
+            max-width: 960px;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            position: relative;
+            display: none;
+        }
+
+        .slide.active { display: flex; }
+
+        /* Navigation */
+        .nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover { background: rgba(255,255,255,0.25); border-color: white; }
+        .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+        .slide-counter {
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+            font-weight: 500;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .dot-nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .dot.active { background: white; transform: scale(1.3); }
+
+        /* Keyboard hint */
+        .key-hint {
+            color: rgba(255,255,255,0.4);
+            font-size: 11px;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        /* ============================================================
+           SLIDE DESIGNS
+        ============================================================ */
+
+        /* SLIDE 1 — Title / Hero */
+        .slide-1 {
+            background: linear-gradient(135deg, #4B286D 0%, #2B1B3D 60%, #1a1a2e 100%);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 48px;
+        }
+
+        .slide-1 .name {
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 700;
+            color: white;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .slide-1 .title-line {
+            font-size: clamp(11px, 1.8vw, 16px);
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+
+        .slide-1 .pill-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .pill {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: clamp(10px, 1.4vw, 13px);
+            font-weight: 500;
+        }
+
+        .pill.accent {
+            background: rgba(167,139,202,0.3);
+            border-color: rgba(167,139,202,0.6);
+        }
+
+        .slide-1 .contact-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: clamp(9px, 1.3vw, 12px);
+            color: rgba(255,255,255,0.6);
+        }
+
+        .slide-1 .role-badge {
+            background: linear-gradient(135deg, #A78BCA, #7C3AED);
+            color: white;
+            font-size: clamp(10px, 1.5vw, 14px);
+            font-weight: 700;
+            padding: 8px 24px;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* SLIDE 2 — Who I Am */
+        .slide-2 {
+            background: white;
+            flex-direction: row;
+        }
+
+        .slide-2 .left-panel {
+            background: linear-gradient(180deg, #4B286D 0%, #2B1B3D 100%);
+            width: 38%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        .slide-2 .left-panel h2 {
+            font-size: clamp(16px, 2.5vw, 26px);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .slide-2 .left-panel p {
+            font-size: clamp(9px, 1.3vw, 12px);
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        .avatar-circle {
+            width: clamp(60px, 10vw, 90px);
+            height: clamp(60px, 10vw, 90px);
+            border-radius: 50%;
+            background: linear-gradient(135deg, #A78BCA, #7C3AED);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(24px, 4vw, 40px);
+            margin-bottom: 16px;
+            border: 3px solid rgba(255,255,255,0.3);
+        }
+
+        .slide-2 .right-panel {
+            flex: 1;
+            padding: 32px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-2 .section-label {
+            font-size: clamp(8px, 1.1vw, 10px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #4B286D;
+            margin-bottom: 12px;
+        }
+
+        .slide-2 .headline {
+            font-size: clamp(13px, 2vw, 20px);
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+            align-items: flex-start;
+        }
+
+        .timeline-dot {
+            min-width: clamp(20px, 2.5vw, 28px);
+            height: clamp(20px, 2.5vw, 28px);
+            border-radius: 50%;
+            background: #4B286D;
+            color: white;
+            font-size: clamp(8px, 1.1vw, 11px);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline-text {
+            font-size: clamp(9px, 1.3vw, 13px);
+            color: #444;
+            line-height: 1.5;
+            padding-top: 2px;
+        }
+
+        .timeline-text strong { color: #4B286D; }
+
+        /* SLIDE 3 — By the Numbers */
+        .slide-3 {
+            background: linear-gradient(135deg, #f8f4fc 0%, #f0e8f8 100%);
+            flex-direction: column;
+            padding: 32px 40px;
+        }
+
+        .slide-header {
+            margin-bottom: 20px;
+        }
+
+        .slide-header .slide-label {
+            font-size: clamp(8px, 1.1vw, 10px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #4B286D;
+            margin-bottom: 4px;
+        }
+
+        .slide-header h2 {
+            font-size: clamp(16px, 2.5vw, 26px);
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            flex: 1;
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(75,40,109,0.1);
+            border-top: 3px solid #4B286D;
+        }
+
+        .metric-card.green { border-top-color: #2e7d32; }
+        .metric-card.blue { border-top-color: #1565c0; }
+
+        .metric-number {
+            font-size: clamp(20px, 3.5vw, 36px);
+            font-weight: 700;
+            color: #4B286D;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .metric-card.green .metric-number { color: #2e7d32; }
+        .metric-card.blue .metric-number { color: #1565c0; }
+
+        .metric-label {
+            font-size: clamp(8px, 1.1vw, 11px);
+            color: #666;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-sub {
+            font-size: clamp(7px, 1vw, 10px);
+            color: #999;
+            margin-top: 2px;
+        }
+
+        /* SLIDE 4 — Tech Expertise */
+        .slide-4 {
+            background: white;
+            flex-direction: column;
+            padding: 28px 36px;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .tech-section h3 {
+            font-size: clamp(10px, 1.5vw, 13px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4B286D;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #f0e8f8;
+        }
+
+        .tech-tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .tech-tag {
+            background: #f0e8f8;
+            color: #4B286D;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: clamp(8px, 1.1vw, 11px);
+            font-weight: 500;
+        }
+
+        .tech-tag.blue { background: #e3f2fd; color: #1565c0; }
+        .tech-tag.green { background: #e8f5e9; color: #2e7d32; }
+
+        .callout-mini {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 3px solid #1565c0;
+            border-radius: 0 8px 8px 0;
+            padding: 10px 14px;
+            font-size: clamp(9px, 1.2vw, 12px);
+            color: #1565c0;
+            line-height: 1.5;
+        }
+
+        .callout-mini.green {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left-color: #2e7d32;
+            color: #1b5e20;
+        }
+
+        /* SLIDE 5 — Innovation Story */
+        .slide-5 {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2B1B3D 100%);
+            flex-direction: column;
+            padding: 32px 40px;
+        }
+
+        .slide-5 .slide-label {
+            font-size: clamp(8px, 1.1vw, 10px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #A78BCA;
+            margin-bottom: 4px;
+        }
+
+        .slide-5 h2 {
+            font-size: clamp(16px, 2.5vw, 26px);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .story-flow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            flex: 1;
+        }
+
+        .story-step {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            padding: 16px 14px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step-num {
+            width: clamp(22px, 3vw, 30px);
+            height: clamp(22px, 3vw, 30px);
+            border-radius: 50%;
+            background: #4B286D;
+            color: white;
+            font-size: clamp(10px, 1.4vw, 13px);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .step-title {
+            font-size: clamp(9px, 1.3vw, 12px);
+            font-weight: 700;
+            color: #A78BCA;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .step-text {
+            font-size: clamp(8px, 1.2vw, 12px);
+            color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .step-text strong { color: white; }
+
+        .quote-banner {
+            background: rgba(167,139,202,0.15);
+            border: 1px solid rgba(167,139,202,0.4);
+            border-radius: 8px;
+            padding: 10px 16px;
+            margin-top: 14px;
+            font-size: clamp(9px, 1.2vw, 12px);
+            color: rgba(255,255,255,0.8);
+            font-style: italic;
+            text-align: center;
+        }
+
+        .quote-banner strong { color: #A78BCA; font-style: normal; }
+
+        /* SLIDE 6 — Leadership Philosophy */
+        .slide-6 {
+            background: white;
+            flex-direction: column;
+            padding: 28px 36px;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            flex: 1;
+        }
+
+        .philosophy-card {
+            background: linear-gradient(135deg, #f8f4fc, #f0e8f8);
+            border-radius: 12px;
+            padding: 18px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .philosophy-icon {
+            font-size: clamp(24px, 4vw, 36px);
+            margin-bottom: 10px;
+        }
+
+        .philosophy-title {
+            font-size: clamp(11px, 1.6vw, 15px);
+            font-weight: 700;
+            color: #4B286D;
+            margin-bottom: 6px;
+        }
+
+        .philosophy-desc {
+            font-size: clamp(8px, 1.1vw, 11px);
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .recognition-strip {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: 8px;
+            padding: 10px 16px;
+            margin-top: 14px;
+            font-size: clamp(9px, 1.2vw, 12px);
+            color: #1b5e20;
+            font-style: italic;
+            text-align: center;
+            border-left: 3px solid #2e7d32;
+        }
+
+        /* SLIDE 7 — Why This Role */
+        .slide-7 {
+            background: linear-gradient(135deg, #4B286D 0%, #2B1B3D 100%);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 36px 48px;
+            text-align: center;
+        }
+
+        .slide-7 .slide-label {
+            font-size: clamp(8px, 1.1vw, 10px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #A78BCA;
+            margin-bottom: 8px;
+        }
+
+        .slide-7 h2 {
+            font-size: clamp(18px, 3vw, 30px);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+
+        .why-item {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 10px;
+            padding: 14px 16px;
+            text-align: left;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .why-icon {
+            font-size: clamp(16px, 2.5vw, 22px);
+            min-width: 28px;
+        }
+
+        .why-text {
+            font-size: clamp(9px, 1.3vw, 13px);
+            color: rgba(255,255,255,0.85);
+            line-height: 1.5;
+        }
+
+        .why-text strong { color: white; }
+
+        .closing-line {
+            font-size: clamp(11px, 1.6vw, 15px);
+            color: rgba(255,255,255,0.7);
+            font-style: italic;
+        }
+
+        .closing-line strong { color: #A78BCA; font-style: normal; }
+
+        @media print {
+            body { background: white; }
+            .controls, .nav-row, .key-hint { display: none; }
+            .slide { display: flex !important; page-break-after: always; aspect-ratio: auto; min-height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <button class="btn btn-secondary" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+    <button class="btn btn-primary" onclick="window.print()">🖨️ Print Slides</button>
+</div>
+
+<div class="slide-wrapper">
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-1 active" id="slide-1">
+        <div class="role-badge">Applying For: Manager, Information Services</div>
+        <div class="name">Shimona Jain</div>
+        <div class="title-line">Engineering Lead · Senior Technical Delivery Lead · Product Manager</div>
+        <div class="pill-row">
+            <span class="pill accent">15+ Years at TELUS Digital</span>
+            <span class="pill">ReactJS · MFE · Green Architecture</span>
+            <span class="pill">~15 Engineers Led</span>
+            <span class="pill accent">8,500+ Sales Generated</span>
+        </div>
+        <div class="contact-row">
+            <span>📧 shimona.khandelwal@gmail.com</span>
+            <span>📞 306-715-5236</span>
+            <span>📍 Saskatoon, Saskatchewan</span>
+            <span>🔗 linkedin.com/in/shimona-jain-2302822b</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: Who I Am -->
+    <div class="slide slide-2" id="slide-2">
+        <div class="left-panel">
+            <div class="avatar-circle">👩‍💻</div>
+            <h2>Who I Am</h2>
+            <p>Engineering leader with a product mindset and a hands-on technical foundation — built entirely at TELUS Digital.</p>
+        </div>
+        <div class="right-panel">
+            <div class="section-label">My Journey — 15+ Years of Progressive Growth</div>
+            <div class="headline">From Full-Stack Developer to Engineering Lead</div>
+            <div class="timeline-item">
+                <div class="timeline-dot">1</div>
+                <div class="timeline-text"><strong>Technical Lead (2010–2021)</strong> — Full-stack developer → Lead, SaaS/ERP platforms, mentoring junior engineers, system architecture</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">2</div>
+                <div class="timeline-text"><strong>Product Owner → Sr. Technical PO (2019–2025)</strong> — Bridging engineering & business, backlog management, stakeholder alignment, ReactJS & MFE expertise</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">3</div>
+                <div class="timeline-text"><strong>Product Manager (2024–Present)</strong> — OKRs, KPIs, product vision, multi-squad leadership, Architecture & Design platform ownership</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">4</div>
+                <div class="timeline-text"><strong>Engineering Lead / Sr. Technical Delivery Lead (2025–Present)</strong> — Leading ~15 engineers, owning 2 MFE apps, Vulcan on Green & Optik TV delivery</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: By the Numbers -->
+    <div class="slide slide-3" id="slide-3">
+        <div class="slide-header">
+            <div class="slide-label">2025 Impact</div>
+            <h2>Delivery Excellence — By the Numbers</h2>
+        </div>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-number">~15</div>
+                <div class="metric-label">Engineers Led</div>
+                <div class="metric-sub">Cross-functional squads</div>
+            </div>
+            <div class="metric-card green">
+                <div class="metric-number">309</div>
+                <div class="metric-label">User Stories Delivered</div>
+                <div class="metric-sub">VOG + Optik TV programs</div>
+            </div>
+            <div class="metric-card green">
+                <div class="metric-number">52</div>
+                <div class="metric-label">Releases in 2025</div>
+                <div class="metric-sub">~1 release per week</div>
+            </div>
+            <div class="metric-card blue">
+                <div class="metric-number">8,500+</div>
+                <div class="metric-label">Sales Generated</div>
+                <div class="metric-sub">Vulcan on Green launch (Aug–Dec)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-number">163+</div>
+                <div class="metric-label">Defects Managed</div>
+                <div class="metric-sub">Critical: 24hr · High: 1-2 day SLA</div>
+            </div>
+            <div class="metric-card green">
+                <div class="metric-number">2+</div>
+                <div class="metric-label">Years MFE Ownership</div>
+                <div class="metric-sub">2 production MFE apps on Green Architecture</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: Tech Expertise -->
+    <div class="slide slide-4" id="slide-4">
+        <div class="slide-header">
+            <div class="slide-label">Technical Foundation</div>
+            <h2 style="font-size:clamp(16px,2.5vw,24px);font-weight:700;color:#1a1a2e;">Modern Web & Architecture Expertise</h2>
+        </div>
+        <div class="two-col">
+            <div class="tech-section">
+                <h3>🏗️ Modern Web Stack</h3>
+                <div class="tech-tag-row">
+                    <span class="tech-tag blue">ReactJS</span>
+                    <span class="tech-tag blue">Micro Frontends (MFE)</span>
+                    <span class="tech-tag blue">Green Architecture</span>
+                    <span class="tech-tag blue">API Integration</span>
+                    <span class="tech-tag blue">Cloud Platforms</span>
+                    <span class="tech-tag blue">Full-Stack Development</span>
+                </div>
+                <div class="callout-mini">
+                    <strong>2+ years</strong> owning 2 production MFE applications on TELUS' Green Architecture platform — overseeing architecture decisions, engineering standards, and long-term technical strategy.
+                </div>
+            </div>
+            <div class="tech-section">
+                <h3>🤖 Innovation & Tooling</h3>
+                <div class="tech-tag-row">
+                    <span class="tech-tag green">AI-Assisted Development</span>
+                    <span class="tech-tag green">VS Code + Cline</span>
+                    <span class="tech-tag green">JIRA API Integration</span>
+                    <span class="tech-tag green">Burn-Up Analytics</span>
+                    <span class="tech-tag green">Dashboard Engineering</span>
+                </div>
+                <div class="callout-mini green">
+                    Built a custom <strong>JIRA-integrated Burn-Up Dashboard</strong> using AI-assisted development — providing real-time scope, velocity & progress visibility. Recognized by manager and PM.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: Innovation Story -->
+    <div class="slide slide-5" id="slide-5">
+        <div class="slide-label">Problem Solving in Action</div>
+        <h2>How I Think: The Dashboard Story</h2>
+        <div class="story-flow">
+            <div class="story-step">
+                <div class="step-num">1</div>
+                <div class="step-title">Problem</div>
+                <div class="step-text">Stakeholders lacked <strong>real-time visibility</strong> into delivery progress. Manual roadmap updates were slow, inaccurate, and created gaps in decision-making during critical delivery periods.</div>
+            </div>
+            <div class="story-step">
+                <div class="step-num">2</div>
+                <div class="step-title">Solution</div>
+                <div class="step-text">I proactively built a <strong>custom JIRA-integrated Burn-Up dashboard</strong> using VS Code + Cline (AI-assisted development) — no waiting, no asking someone else to solve it.</div>
+            </div>
+            <div class="story-step">
+                <div class="step-num">3</div>
+                <div class="step-title">What It Did</div>
+                <div class="step-text">Live <strong>burn-up charts</strong>, velocity metrics, assignee workload tracking, defect dashboards with due dates — all connected to JIRA in real time. Eliminated manual monthly updates entirely.</div>
+            </div>
+            <div class="story-step">
+                <div class="step-num">4</div>
+                <div class="step-title">Impact</div>
+                <div class="step-text"><strong>Reduced escalations</strong> before Beta launch. Enabled <strong>data-driven decisions</strong> for leadership. Recognized by manager and PM. Adopted as the team's standard reporting tool.</div>
+            </div>
+        </div>
+        <div class="quote-banner">
+            <strong>"Looking great!!! Thanks for jamming through how we visualize our delivery progress."</strong> — Mandi Romanski (Manager) & Natasha Lander (PM), Dec 2025
+        </div>
+    </div>
+
+    <!-- SLIDE 6: Leadership Philosophy -->
+    <div class="slide slide-6" id="slide-6">
+        <div class="slide-header">
+            <div class="slide-label" style="font-size:clamp(8px,1.1vw,10px);font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#4B286D;margin-bottom:4px;">My Leadership Philosophy</div>
+            <h2 style="font-size:clamp(16px,2.5vw,24px);font-weight:700;color:#1a1a2e;">How I Build High-Performing Teams</h2>
+        </div>
+        <div class="philosophy-grid">
+            <div class="philosophy-card">
+                <div class="philosophy-icon">🚀</div>
+                <div class="philosophy-title">Empowerment</div>
+                <div class="philosophy-desc">Engineers do their best work when they have ownership and trust. I create space for people to take initiative, experiment, and grow.</div>
+            </div>
+            <div class="philosophy-card">
+                <div class="philosophy-icon">🎯</div>
+                <div class="philosophy-title">Clarity</div>
+                <div class="philosophy-desc">Clear direction, defined priorities, and transparent communication — even when the message is difficult. No ambiguity, no surprises.</div>
+            </div>
+            <div class="philosophy-card">
+                <div class="philosophy-icon">🔓</div>
+                <div class="philosophy-title">Remove Blockers</div>
+                <div class="philosophy-desc">My job is to clear the path. I proactively identify and resolve impediments so engineers can focus on solving the most important problems.</div>
+            </div>
+        </div>
+        <div class="recognition-strip">
+            "Her ability to maintain delivery velocity, <strong>unblock the team, and foster space for others to grow</strong> has kept us both focused and motivated." — Mandi Romanski (Manager), 2025
+        </div>
+    </div>
+
+    <!-- SLIDE 7: Why This Role -->
+    <div class="slide slide-7" id="slide-7">
+        <div class="slide-label">Why I'm the Right Fit</div>
+        <h2>Why This Role, Why Me, Why Now</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">🏠</div>
+                <div class="why-text"><strong>Insider Advantage</strong> — I already know the programs, the stakeholders, the culture, and the technology. I can make an immediate impact from day one.</div>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">🏗️</div>
+                <div class="why-text"><strong>MFE & Modern Web</strong> — 2+ years owning 2 MFE apps on Green Architecture with ReactJS. This is exactly what the role demands — I'm already doing it.</div>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">📈</div>
+                <div class="why-text"><strong>Proven Delivery</strong> — 309 stories, 52 releases, 8,500+ sales. I don't just lead teams — I deliver measurable business outcomes.</div>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">⭐</div>
+                <div class="why-text"><strong>Consistent Recognition</strong> — Recognized across 2022, 2024, and 2025 by multiple managers, stakeholders, and senior leaders for the same core strengths.</div>
+            </div>
+        </div>
+        <div class="closing-line">
+            Ready to step into this role and drive <strong>TELUS' Mobility Convergence program</strong> forward — from day one.
+        </div>
+    </div>
+
+</div>
+
+<!-- Navigation -->
+<div class="nav-row">
+    <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>‹</button>
+    <div class="dot-nav" id="dotNav"></div>
+    <span class="slide-counter" id="slideCounter">1 / 7</span>
+    <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">›</button>
+</div>
+<div class="key-hint">← → arrow keys to navigate · Space to advance</div>
+
+<script>
+    const totalSlides = 7;
+    let current = 1;
+
+    // Build dots
+    const dotNav = document.getElementById('dotNav');
+    for (let i = 1; i <= totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (i === 1 ? ' active' : '');
+        dot.onclick = () => goToSlide(i);
+        dotNav.appendChild(dot);
+    }
+
+    function goToSlide(n) {
+        document.getElementById('slide-' + current).classList.remove('active');
+        document.querySelectorAll('.dot')[current - 1].classList.remove('active');
+        current = Math.max(1, Math.min(totalSlides, n));
+        document.getElementById('slide-' + current).classList.add('active');
+        document.querySelectorAll('.dot')[current - 1].classList.add('active');
+        document.getElementById('slideCounter').textContent = current + ' / ' + totalSlides;
+        document.getElementById('prevBtn').disabled = current === 1;
+        document.getElementById('nextBtn').disabled = current === totalSlides;
+    }
+
+    function changeSlide(dir) {
+        goToSlide(current + dir);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); changeSlide(1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(-1); }
+    });
+
+    // Fullscreen
+    function toggleFullscreen() {
+        const el = document.querySelector('.slide-wrapper');
+        if (!document.fullscreenElement) {
+            el.requestFullscreen && el.requestFullscreen();
+        } else {
+            document.exitFullscreen && document.exitFullscreen();
+        }
+    }
+</script>
+
+</body>
+</html>
